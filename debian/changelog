@@ -1,0 +1,337 @@
+zendframework (1.18.6) UNRELEASED; urgency=medium
+
+  * Initial packaging for zf1-future
+  * Fixed compatibility with klear framework
+
+ -- Irontec Package Team <packages@irontec.com>  Fri, 23 Oct 2020 11:44:14 +0200
+
+zendframework (1.12.9+dfsg-2+deb8u6) jessie; urgency=medium
+
+  * Fix regression from ZF2015-08: binary data corruption
+  * Backport security fix from 1.12.18:
+    - ZF2016-01: Potential Insufficient Entropy Vulnerability in ZF1
+      http://framework.zend.com/security/advisory/ZF2016-01
+
+ -- David Prévot <taffit@debian.org>  Wed, 13 Apr 2016 16:37:00 -0400
+
+zendframework (1.12.9+dfsg-2+deb8u5) jessie; urgency=medium
+
+  * Backport security fix from 1.12.17:
+    - ZF2015-09: Fixed entropy issue in word CAPTCHA
+      http://framework.zend.com/security/advisory/ZF2015-09
+
+ -- David Prévot <taffit@debian.org>  Tue, 24 Nov 2015 18:21:26 -0400
+
+zendframework (1.12.9+dfsg-2+deb8u4) jessie-security; urgency=high
+
+  * Backport security fixes from 1.12.16:
+    - ZF2015-07: Filesystem Permissions Issues in Multiple Components
+      http://framework.zend.com/security/advisory/ZF2015-07
+      [CVE-2015-5723]
+    - ZF2015-08: Potential SQL injection vector using null byte for PDO
+      (MsSql, SQLite)
+      http://framework.zend.com/security/advisory/ZF2015-08
+      [CVE-2014-8089]
+
+ -- David Prévot <taffit@debian.org>  Wed, 16 Sep 2015 08:54:02 -0400
+
+zendframework (1.12.9+dfsg-2+deb8u3) jessie-security; urgency=high
+
+  * ZF2015-06: XXE/XEE vector when using ZendXml on multibyte payloads
+    http://framework.zend.com/security/advisory/ZF2015-06
+    [CVE-2015-5161]
+
+ -- David Prévot <taffit@debian.org>  Tue, 18 Aug 2015 18:00:37 +0200
+
+zendframework (1.12.9+dfsg-2+deb8u2) jessie-security; urgency=high
+
+  * Update ZF2015-04 patch.
+    Use the final upstream patch instead of the initial one.
+    No actual change other than spaces, comments and tests.
+    It will ease cherry-picking further fixes if needed.
+  * Fix regression in headers creation.
+    Non-string and non-stringable objects were not allowed anymore with the
+    ZF2015-04 patch. This broke a number of other classes, however, which
+    required integer and/or float values (e.g., to set a Content-Length
+    header).
+
+ -- David Prévot <taffit@debian.org>  Sat, 23 May 2015 12:13:17 -0400
+
+zendframework (1.12.9+dfsg-2+deb8u1) jessie-security; urgency=high
+
+  * Track Jessie update in the jessie branch
+  * Fix ZF2015-04: CRLF injections in HTTP and Mail
+    http://framework.zend.com/security/advisory/ZF2015-04
+    [CVE-2015-3154]
+
+ -- David Prévot <taffit@debian.org>  Thu, 14 May 2015 10:31:52 -0400
+
+zendframework (1.12.9+dfsg-2) unstable; urgency=medium
+
+  * Revert tests during package build (Closes: #765155)
+  * Use repacksuffix feature of uscan
+
+ -- David Prévot <taffit@debian.org>  Mon, 13 Oct 2014 22:40:34 -0400
+
+zendframework (1.12.9+dfsg-1) unstable; urgency=medium
+
+  [ Matthew Weier O'Phinney ]
+  * [ZF2014-05] Fix for null-byte binding
+  * [#372] Quote null byte characters
+  * [1.12.9] Release readiness
+
+  [ David Prévot ]
+  * Bump standards version to 3.9.6
+
+ -- David Prévot <taffit@debian.org>  Thu, 18 Sep 2014 20:28:35 -0400
+
+zendframework (1.12.8+dfsg-1) unstable; urgency=medium
+
+  * Imported Upstream version 1.12.8+dfsg (Closes: #759575)
+  * Exclude sourceless and non-free files from source
+  * Add watch file and get-orig-source target
+  * debian/patches:
+    - Handle with gbp pq
+    - Add patches to run tests
+  * debian/rules:
+    - Use php for section
+    - Maintain package in the PHP PEAR Maintainers team
+    - Declare Vcs-* entries
+    - Bump standards version to 3.9.5
+  * Use format 3.0 (quilt) instead of quilt
+  * Update copyright in format 1.0
+  * Use pkg-php-tools Composer helper
+  * Run tests during package build
+  * Use fonts from ttf-bitstream-vera for tests
+
+ -- David Prévot <taffit@debian.org>  Wed, 03 Sep 2014 17:02:50 -0400
+
+zendframework (1.12.7-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload
+  * New upstream release, fixes a security issue (Closes: #754201):
+    - ZF2014-04: Potential SQL injection in the ORDER implementation of
+      Zend_Db_Select
+      http://framework.zend.com/security/advisory/ZF2014-04
+
+ -- David Prévot <taffit@debian.org>  Tue, 08 Jul 2014 12:33:40 -0400
+
+zendframework (1.12.5-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload
+  * New upstream release, fixes several security issues (Closes: #743175):
+    - ZF2014-01: Potential XXE/XEE attacks using PHP functions:
+      simplexml_load_*, DOMDocument::loadXML, and xml_parse
+      http://framework.zend.com/security/advisory/ZF2014-01
+      [CVE-2014-2681] [CVE-2014-2682] [CVE-2014-2683]
+    - F2014-02: Potential security issue in login mechanism of ZendOpenId and
+      Zend_OpenId consumer
+      http://framework.zend.com/security/advisory/ZF2014-02
+      [CVE-2014-2684] [CVE-2014-2685]
+  * Update copyright years
+
+ -- David Prévot <taffit@debian.org>  Mon, 14 Apr 2014 14:48:35 -0400
+
+zendframework (1.12.3-1) unstable; urgency=low
+
+  * new upstream release
+  * removed windows azure stuff for windows platform from library path
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Wed, 24 May 2013 22:17:00 +0200
+
+zendframework (1.11.12-1) unstable; urgency=high
+
+  * new upstream release
+    - fixes Local file disclosure via XXE injection (Closes: #679215)
+  * changed Standards-Version to 3.9.3
+  * added DM-Upload-Allowed to control
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Wed, 27 Jun 2012 21:36:00 +0200
+
+zendframework (1.11.11-1) unstable; urgency=low
+
+  * new upstream release
+  * changed Standards-Version to 3.9.2
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sat, 11 Feb 2012 21:53:00 +0200
+
+zendframework (1.11.10-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sun, 07 Aug 2011 20:24:00 +0200
+
+zendframework (1.11.9-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Fri, 15 Jul 2011 19:15:00 +0200
+
+zendframework (1.11.8-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sat, 9 Jul 2011 22:28:00 +0200
+
+zendframework (1.11.6-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sat, 21 May 2011 21:04:00 +0200
+
+zendframework (1.11.4-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sun, 06 Mar 2011 22:38:00 +0200
+
+zendframework (1.11.3-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Tue, 08 Feb 2011 22:10:00 +0200
+
+zendframework (1.11.2-2) experimental; urgency=low
+
+  * Remove Suggests on php5-sqlite3 for debcheck since the package
+    is php5-sqlite and is no longer built by php5 under that name
+    (Closes: #603515)
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Wed, 19 Jan 2011 21:20:00 +0200
+
+zendframework (1.11.2-1) experimental; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Thu, 30 Dec 2010 20:59:00 +0200
+
+zendframework (1.11.0-1) experimental; urgency=low
+
+  * new upstream release
+  * fixing wrong rights on resources/languages/pt_BR/Zend_Validate.php
+  * using php5 or php5-cli for zendframework dependencies (Closes: #598378)
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Thu, 18 Nov 2010 23:29:00 +0200
+
+zendframework (1.10.8-1) experimental; urgency=low
+
+  * new upstream release
+  * created new package zendframework-resources that contains pre-translated
+    error messages (Closes: #592385)
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Fri, 27 Aug 2010 20:54:00 +0200
+
+zendframework (1.10.7-1) unstable; urgency=low
+
+  * new upstream release
+  * changed Standards-Version to 3.9.1
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sun, 08 Aug 2010 22:01:00 +0200
+
+zendframework (1.10.6-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Tue, 22 Jun 2010 20:42:00 +0200
+
+zendframework (1.10.5-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Mon, 31 May 2010 21:21:00 +0200
+
+zendframework (1.10.4-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Wed, 28 Apr 2010 20:10:00 +0200
+
+zendframework (1.10.3-1) unstable; urgency=low
+
+  * new upstream release
+  * set debian source format
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Mon, 5 Apr 2010 18:55:00 +0200
+
+zendframework (1.10.2-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sun, 28 Feb 2010 20:00:00 +0200
+
+zendframework (1.10.1-2) unstable; urgency=low
+
+  * added manpage for zf command
+  * changed Standards-Version to 3.8.4
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Tue, 16 Feb 2010 21:00:00 +0200
+
+zendframework (1.10.1-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Fri, 12 Feb 2010 21:40:00 +0200
+
+zendframework (1.10.0-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Wed, 27 Jan 2010 20:50:00 +0200
+
+zendframework (1.9.7-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Tue, 12 Jan 2010 22:00:00 +0200
+
+zendframework (1.9.6-2) unstable; urgency=low
+
+  * use quillt to set paths for shell scripts
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Mon, 28 Dec 2009 22:00:00 +0200
+
+zendframework (1.9.6-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sun, 06 Dec 2009 20:40:00 +0200
+
+zendframework (1.9.5-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sun, 28 Oct 2009 10:02:00 +0200
+
+zendframework (1.9.4-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sun, 17 Oct 2009 14:40:00 +0200
+
+zendframework (1.9.3pl1-1) unstable; urgency=low
+
+  * new upstream release
+    - corrects a BC break found in the 1.9.3 release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sun, 27 Sep 2009 20:20:00 +0200
+
+zendframework (1.9.3-1) unstable; urgency=low
+
+  * new upstream release
+    - fixed more than 100 bugs in over 40 components
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Tue, 22 Sep 2009 21:10:00 +0200
+
+zendframework (1.9.2-2) unstable; urgency=low
+
+  * Fixed spelling (Closes: #547125)
+  * Created bin package with that you can creat a default
+    MVC environment (Closes: #544793)
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sun, 20 Sep 2009 13:45:00 +0200
+
+zendframework (1.9.2-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Wed, 26 Aug 2009 21:15:00 +0200

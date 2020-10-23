@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --with phpcomposer
+
+override_dh_clean:
+	dh_clean -X.orig
+
+override_dh_fixperms:
+	dh_fixperms
+	find debian/zendframework/usr/share/php/Zend -type f -executable | xargs chmod 0644
+
+get-orig-source:
+	uscan --verbose --rename --force

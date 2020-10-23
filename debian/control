@@ -1,0 +1,30 @@
+Source: zendframework
+Section: php
+Priority: optional
+Maintainer: Irontec Package Team <packages@irontec.com>
+Build-Depends: debhelper (>= 12.1.1), pkg-php-tools (>= 1.37)
+Standards-Version: 3.9.6
+Homepage: http://framework.zend.com
+
+Package: zendframework
+Architecture: all
+Depends: ${misc:Depends}, ${phpcomposer:Debian-require}
+Suggests: php7.4-curl,
+          php7.4-gd,
+          php7.4-imap,
+          php7.4-json,
+          php7.4-ldap,
+          php7.4-mysql,
+          php7.4-pgsql,
+          php7.4-sqlite,
+          ${phpcomposer:Debian-suggest}
+Replaces: ${phpcomposer:Debian-replace}
+Breaks: ${phpcomposer:Debian-conflict}, ${phpcomposer:Debian-replace}
+Provides: zend-framework, ${phpcomposer:Debian-provide}
+Description: powerful PHP framework (zf1-future fork)
+ Extending the art & spirit of PHP, Zend Framework is based on simplicity,
+ object-oriented best practices, corporate friendly licensing, and a rigorously
+ tested agile codebase. Zend Framework is focused on building more secure,
+ reliable, and modern Web 2.0 applications & web services, and consuming widely
+ available APIs from leading vendors like Google, Amazon, Yahoo!, Flickr, as
+ well as API providers and cataloguers like StrikeIron and ProgrammableWeb.
